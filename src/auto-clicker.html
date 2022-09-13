@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; style-src-elem 'self' 'unsafe-inline'; img-src 'self' data:;"
+    />
+    <title>RPA FAUNA - Auto Clicker</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css" />
+    <!-- Add icon library -->
+    <script src="../assets/fontawesome/js/all.min.js"></script>
+  </head>
+  <body>
+    <button id="myBtnBack" class="btnBack"><i class="fa fa-circle-chevron-left"></i></button>
+    <button id="myBtn" class="btn"><i class="fa fa-list"></i></button>
+    <input id="screenscanner_toggle" type="checkbox" />
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="log_screenscanner">Log</p>
+      </div>
+    </div>
+    <script src="./renderer.js"></script>
+  </body>
+</html>

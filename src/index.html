@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; style-src-elem 'self' 'unsafe-inline'; img-src 'self' data:;"
+    />
+    <title>RPA FAUNA</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/tagify.css" />
+  </head>
+  <style type="text/css">
+    body {
+      background-color: #c1b8b8;
+    }
+    .bootstrap-tagsinput .tag {
+      margin-right: 2px;
+      color: white !important;
+      background-color: #0d6efd;
+      padding: 0.2rem;
+    }
+  </style>
+  <body>
+    <img
+      src="../assets/images/fauna-icon.png"
+      class="rounded mx-auto d-block"
+      alt="Logo Fauna"
+      style="height: 20vh"
+    />
+    <div class="container text-center">
+      <div class="row" style="margin-bottom: 180px">
+        <div class="col-12">Hello, Welcome to Fauna automation</div>
+        <div class="col-12">
+          We will help you to automate restarting inactive unit
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p class="text-dark">
+            First, tell us which unit you want to automate
+          </p>
+        </div>
+        <div class="col-6 offset-3">
+          <div class="mb-3">
+            <input
+              name="tags"
+              type="text"
+              class="form-control"
+              placeholder="eg: 30020, 30012, 2110"
+              id="unit-list"
+              data-role="tagsinput"
+            />
+          </div>
+          <div class="d-grid gap-2 col-4 mx-auto">
+            <button
+              type="button"
+              class="btn btn-success btn-sm"
+              data-bs-toggle="modal"
+              data-bs-target="#verifyModal"
+              id="save-button"
+              disabled
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="verifyModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="verifyModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="container text-center">
+              <div class="row">
+                <div class="col-8 offset-2">
+                  <p class="text-dark">
+                    Please verify that you want to automate these unit:
+                  </p>
+                </div>
+                <div class="col-8 offset-2">
+                  <div class="mb-3">
+                    <textarea
+                      class="form-control text-center"
+                      placeholder="eg: 30020, 30012, 2110"
+                      style="
+                        border: dotted 2px;
+                        border-radius: 10px;
+                        resize: none;
+                      "
+                      disabled
+                      id="verify_list"
+                    ></textarea>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <button
+                        type="button"
+                        class="btn btn-danger btn-sm"
+                        data-bs-dismiss="modal"
+                      >
+                        Discard
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <a
+                        href="./auto-clicker.html"
+                        class="btn btn btn-success btn-sm"
+                        tabindex="-1"
+                        role="button"
+                        aria-disabled="true"
+                        id="verify-button"
+                        >Verify</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/tagify.min.js"></script>
+    <script src="../assets/js/tagify.polyfills.min.js"></script>
+    <script src="./renderer.js"></script>
+  </body>
+</html>

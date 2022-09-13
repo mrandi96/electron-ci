@@ -1,0 +1,76 @@
+{
+  "name": "electronjs",
+  "version": "1.0.0",
+  "description": "hehe",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "nodemon --watch . --exec \"electron .\" -e js,json,html,css",
+    "make": "electron-forge make",
+		"postinstall": "electron-builder install-app-deps",
+		"build": "electron-builder --mac --windows --linux",
+		"release": "electron-builder --mac --windows --linux --publish always"
+  },
+	"build": {
+		"appId": "com.hedwig.fauna",
+		"productName": "Fauna",
+		"mac": {
+			"category": "public.app-category.development"
+		},
+		"dmg": {
+			"icon": false
+		},
+		"linux": {
+			"target": ["AppImage"],
+			"category": "Development"
+		}
+	},
+  "author": "muehehe",
+  "license": "ISC",
+  "dependencies": {
+    "@electron-forge/plugin-webpack": "^6.0.0-beta.65",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.65",
+    "@electron-forge/maker-deb": "^6.0.0-beta.65",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.65",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.65",
+    "@electron-forge/maker-zip": "^6.0.0-beta.65",
+    "electron": "^20.0.1",
+    "electron-builder": "^23.3.3",
+    "nodemon": "^2.0.19"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "ignore": [
+          "node_modules",
+          ".gitignore"
+        ]
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "electronjs"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
