@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest, windows-latest]
+        os: [macos-latest, ubuntu-latest, windows-latest]
 
     steps:
       - name: Check out Git repository
@@ -18,6 +18,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.13.1
+      
+      - name: Install dmg-license package
+        run: npm i dmg-license
 
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1
