@@ -8,8 +8,8 @@
     "dev": "nodemon --watch . --exec \"electron .\" -e js,json,html,css",
     "make": "electron-forge make",
 		"postinstall": "electron-builder install-app-deps",
-		"build": "electron-builder --mac --windows --linux",
-		"release": "electron-builder --mac --windows --linux --publish always"
+		"build": "electron-builder --mac",
+		"release": "electron-builder --mac --publish always"
   },
 	"build": {
 		"appId": "com.hedwig.fauna",
