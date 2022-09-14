@@ -18,6 +18,21 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.13.1
+
+      - name: Install electron-forge
+        run: npm i @electron-forge/cli@6.0.0-beta.65
       
+      - name: Install maker for linux
+        run: npm i @electron-forge/maker-deb@6.0.0-beta.65
+
+      - name: Install maker for rpm
+        run: npm i @electron-forge/maker-rpm@6.0.0-beta.65
+
+      - name: Install maker for windows
+        run: npm i @electron-forge/maker-squirrel@6.0.0-beta.65
+    
+      - name: Install maker for windows
+        run: npm i @electron-forge/maker-zip@6.0.0-beta.65
+
       - name: Build release
         run: npm run make
